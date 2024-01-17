@@ -11,6 +11,7 @@
 		5D3CFD702B578FFF0050C0B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3CFD6F2B578FFF0050C0B0 /* ContentView.swift */; };
 		5D3CFD722B5790000050C0B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D3CFD712B5790000050C0B0 /* Assets.xcassets */; };
 		5D3CFD752B5790000050C0B0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D3CFD742B5790000050C0B0 /* Preview Assets.xcassets */; };
+		5D3CFD7E2B5792900050C0B0 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3CFD7D2B5792900050C0B0 /* Note.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		5D3CFD6F2B578FFF0050C0B0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5D3CFD712B5790000050C0B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D3CFD742B5790000050C0B0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5D3CFD7D2B5792900050C0B0 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +53,9 @@
 		5D3CFD6C2B578FFF0050C0B0 /* CredoNotes Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				5D3CFD7C2B5792840050C0B0 /* Model */,
 				5D3CFD6D2B578FFF0050C0B0 /* CredoNotesApp.swift */,
-				5D3CFD6F2B578FFF0050C0B0 /* ContentView.swift */,
+				5D3CFD7B2B57927A0050C0B0 /* Views */,
 				5D3CFD712B5790000050C0B0 /* Assets.xcassets */,
 				5D3CFD732B5790000050C0B0 /* Preview Content */,
 			);
@@ -65,6 +68,22 @@
 				5D3CFD742B5790000050C0B0 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5D3CFD7B2B57927A0050C0B0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5D3CFD6F2B578FFF0050C0B0 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5D3CFD7C2B5792840050C0B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5D3CFD7D2B5792900050C0B0 /* Note.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +158,7 @@
 			files = (
 				5D3CFD702B578FFF0050C0B0 /* ContentView.swift in Sources */,
 				5D3CFD6E2B578FFF0050C0B0 /* CredoNotesApp.swift in Sources */,
+				5D3CFD7E2B5792900050C0B0 /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
