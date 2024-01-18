@@ -50,63 +50,72 @@ struct ContentView: View {
     
     // MARK: - BODY
     var body: some View {
-        VStack {
-            HStack(alignment: .center, spacing: 6) {
-                TextField("Add New Note", text: $text)
+        NavigationStack {
+            VStack {
+                HStack(alignment: .center, spacing: 6) {
+                    TextField("Add New Note", text: $text)
+                    
+                    Button {
+                        // 1. Only run if text field is not emtpy
+                        guard text.isEmpty == false else { return }
+                        
+                        // 2. Create a new note item with text value
+                        let note = Note(id: UUID(), text: text)
+                        
+                        // 3. Append to notes array
+                        notes.append(note)
+                        
+                        // 4. Clear text field
+                        text = ""
+                        
+                        // 5. Save the notes
+                        save()
+                    } label: {
+                        Image(systemName: "plus.circle")
+                            .font(.system(size: 42, weight: .semibold))
+                    }
+                    .fixedSize()
+                    .buttonStyle(.plain)
+                    .foregroundStyle(.accent)
+                } //: HStack
                 
-                Button {
-                    // 1. Only run if text field is not emtpy
-                    guard text.isEmpty == false else { return }
-                    
-                    // 2. Create a new note item with text value
-                    let note = Note(id: UUID(), text: text)
-                    
-                    // 3. Append to notes array
-                    notes.append(note)
-                    
-                    // 4. Clear text field
-                    text = ""
-                    
-                    // 5. Save the notes
-                    save()
-                } label: {
-                    Image(systemName: "plus.circle")
-                        .font(.system(size: 42, weight: .semibold))
-                }
-                .fixedSize()
-                .buttonStyle(.plain)
-                .foregroundStyle(.accent)
-            } //: HStack
-            
-            Spacer()
-            
-            if notes.count >= 1 {
-                List {
-                    ForEach(0..<notes.count, id: \.self) { i in
-                        HStack {
-                            Capsule()
-                                .frame(width: 4)
-                                .foregroundStyle(.accent)
-                            Text(notes[i].text)
-                                .lineLimit(1)
-                                .padding(.leading, 5)
-                        }
-                    } //: ForEach
-                    .onDelete(perform: delete)
-                }
-            } else {
                 Spacer()
-                Image(systemName: "note.text")
-                    .resizable()
-                    .scaledToFit()
-                    .foregroundStyle(.gray)
-                    .opacity(0.25)
-                    .padding(25)
-            } //: List
-        } //: VStack
-        .navigationTitle("Notes")
-        .onAppear {
-            load()
+                
+                if notes.count >= 1 {
+                    List {
+                        ForEach(0..<notes.count, id: \.self) { i in
+                            NavigationLink(
+                                destination:
+                                    DetailView(
+                                        note: notes[i],
+                                        count: notes.count,
+                                        index: i)) {
+                                HStack {
+                                    Capsule()
+                                        .frame(width: 4)
+                                        .foregroundStyle(.accent)
+                                    Text(notes[i].text)
+                                        .lineLimit(1)
+                                        .padding(.leading, 5)
+                                }
+                            } //: NavigationLink
+                        } //: ForEach
+                        .onDelete(perform: delete)
+                    }
+                } else {
+                    Spacer()
+                    Image(systemName: "note.text")
+                        .resizable()
+                        .scaledToFit()
+                        .foregroundStyle(.gray)
+                        .opacity(0.25)
+                        .padding(25)
+                } //: List
+            } //: VStack
+            .navigationTitle("Notes")
+            .onAppear {
+                load()
+        }
         }
     }
 }
