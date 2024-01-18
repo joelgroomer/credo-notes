@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D2FB1882B58EA2100A0708B /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2FB1872B58EA2100A0708B /* CreditsView.swift */; };
+		5D2FB18B2B58EA5900A0708B /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2FB18A2B58EA5900A0708B /* HeaderView.swift */; };
 		5D3CFD6E2B578FFF0050C0B0 /* CredoNotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3CFD6D2B578FFF0050C0B0 /* CredoNotesApp.swift */; };
 		5D3CFD702B578FFF0050C0B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3CFD6F2B578FFF0050C0B0 /* ContentView.swift */; };
 		5D3CFD722B5790000050C0B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D3CFD712B5790000050C0B0 /* Assets.xcassets */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D2FB1872B58EA2100A0708B /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
+		5D2FB18A2B58EA5900A0708B /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		5D3CFD6A2B578FFF0050C0B0 /* CredoNotes Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CredoNotes Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D3CFD6D2B578FFF0050C0B0 /* CredoNotesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredoNotesApp.swift; sourceTree = "<group>"; };
 		5D3CFD6F2B578FFF0050C0B0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -36,6 +40,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D2FB1892B58EA4C00A0708B /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				5D2FB18A2B58EA5900A0708B /* HeaderView.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 		5D3CFD612B578FFF0050C0B0 = {
 			isa = PBXGroup;
 			children = (
@@ -55,6 +67,7 @@
 		5D3CFD6C2B578FFF0050C0B0 /* CredoNotes Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				5D2FB1892B58EA4C00A0708B /* Component */,
 				5D3CFD7C2B5792840050C0B0 /* Model */,
 				5D3CFD6D2B578FFF0050C0B0 /* CredoNotesApp.swift */,
 				5D3CFD7B2B57927A0050C0B0 /* Views */,
@@ -77,6 +90,7 @@
 			children = (
 				5D3CFD6F2B578FFF0050C0B0 /* ContentView.swift */,
 				5D3CFD7F2B58E6110050C0B0 /* DetailView.swift */,
+				5D2FB1872B58EA2100A0708B /* CreditsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -160,8 +174,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D3CFD702B578FFF0050C0B0 /* ContentView.swift in Sources */,
+				5D2FB18B2B58EA5900A0708B /* HeaderView.swift in Sources */,
 				5D3CFD802B58E6110050C0B0 /* DetailView.swift in Sources */,
 				5D3CFD6E2B578FFF0050C0B0 /* CredoNotesApp.swift in Sources */,
+				5D2FB1882B58EA2100A0708B /* CreditsView.swift in Sources */,
 				5D3CFD7E2B5792900050C0B0 /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
