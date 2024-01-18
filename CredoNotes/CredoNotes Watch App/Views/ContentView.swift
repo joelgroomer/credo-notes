@@ -11,6 +11,7 @@ struct ContentView: View {
     // MARK: - PROPERTIES
     @State private var notes: [Note] = [Note]()
     @State private var text: String = ""
+    @AppStorage("lineCount") var lineCount: Int = 1
     
     // MARK: - FUNCTIONS
     func getDocumentDirectory() -> URL {
@@ -90,15 +91,15 @@ struct ContentView: View {
                                         note: notes[i],
                                         count: notes.count,
                                         index: i)) {
-                                HStack {
-                                    Capsule()
-                                        .frame(width: 4)
-                                        .foregroundStyle(.accent)
-                                    Text(notes[i].text)
-                                        .lineLimit(1)
-                                        .padding(.leading, 5)
-                                }
-                            } //: NavigationLink
+                                            HStack {
+                                                Capsule()
+                                                    .frame(width: 4)
+                                                    .foregroundStyle(.accent)
+                                                Text(notes[i].text)
+                                                    .lineLimit(lineCount)
+                                                    .padding(.leading, 5)
+                                            }
+                                        } //: NavigationLink
                         } //: ForEach
                         .onDelete(perform: delete)
                     }
@@ -115,7 +116,7 @@ struct ContentView: View {
             .navigationTitle("Notes")
             .onAppear {
                 load()
-        }
+            }
         }
     }
 }
